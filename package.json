@@ -1,0 +1,31 @@
+{
+  "name": "@asincode/wompi-lib",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "node --run lint -- --fix",
+    "prepare": "husky || true"
+  },
+  "keywords": [],
+  "author": "Asincode DevOps <https://github.com/orgs/asincode-sas/teams/asincode-devops>",
+  "license": "ISC",
+  "description": "Librería para el manejo de transacciones y eventos de la pasarela de WOMPI",
+  "type": "module",
+  "homepage": "https://github.com/asincode-sas/wompi-lib#readme",
+  "bugs": {
+    "url": "https://github.com/asincode-sas/wompi-lib/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asincode-sas/wompi-lib.git"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.8.0",
+    "eslint": "^9.25.1",
+    "eslint-config-lintastic": "github:asincode-sas/eslint-config-lintastic",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1"
+  }
+}
