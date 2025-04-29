@@ -6,7 +6,7 @@
 
 ---
 
-`wompi-client` es una librería desarrollada para facilitar la integración de cualquier backend (hecho en Node.js) 
+`wompi-lib` es una librería desarrollada para facilitar la integración de cualquier backend (hecho en Node.js) 
 con la pasarela de pagos Wompi, evitando tener que escribir funciones repetitivas cada vez que quieras 
 realizar una acción común como iniciar un pago, validar un webhook o consultar una transacción.
 
