@@ -20,7 +20,7 @@ rutinario necesario para hacer que algo funcione, pero que no aporta lógica de 
 ## Índice
 - [Uso básico](#uso-básico)
 - [`createClient`](#createclient)
-- [`buildWompiUrl`](#buildwompurl)
+- [`buildWompiUrl`](#buildwompiurl)
 - [`validateChecksum`](#validatechecksum)
 - [`checkTransactionStatusById`](#checktransactionstatusbyid)
 - [Tipado (TypeScript)](#tipado-typescript)
