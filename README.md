@@ -76,7 +76,7 @@ lo que te permite realizar peticiones de forma segura a cualquier endpoint del b
 estado de una transacción, crear pagos o validar eventos).
 
 Esta función es especialmente útil para centralizar la configuración y evitar repetir lógica de autenticación en múltiples 
-lugares de tu código. Al generar una única instancia con createClient, puedes reutilizarla a lo largo de toda tu aplicación 
+lugares de tu código. Al generar una única instancia con `createClient`, puedes reutilizarla a lo largo de toda tu aplicación 
 o servicio para realizar llamadas autenticadas de forma consistente.
 
 Los parametros de configuración son:
