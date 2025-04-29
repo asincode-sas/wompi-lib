@@ -70,9 +70,14 @@ export const webhookHandler = (req, res) => {
 ```
 
 ## `createClient`
-`createClient` es una función que retorna una instancia configurada de Axios, lista para realizar peticiones 
-autenticadas al backend de Wompi. Esta instancia puede ser reutilizada para consultar el estado de transacciones 
-o cualquier otro endpoint disponible en la API.
+`createClient` es una función que retorna una instancia preconfigurada de Axios lista para interactuar con la 
+API de Wompi. Esta instancia incluye la autenticación necesaria mediante el uso de una llave privada (PRIVATE_KEY), 
+lo que te permite realizar peticiones de forma segura a cualquier endpoint del backend de Wompi (como consultar el 
+estado de una transacción, crear pagos o validar eventos).
+
+Esta función es especialmente útil para centralizar la configuración y evitar repetir lógica de autenticación en múltiples 
+lugares de tu código. Al generar una única instancia con createClient, puedes reutilizarla a lo largo de toda tu aplicación 
+o servicio para realizar llamadas autenticadas de forma consistente.
 
 Los parametros de configuración son:
 - `baseURL`: URL base de la API de Wompi (sandbox o producción).
