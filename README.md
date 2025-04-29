@@ -84,7 +84,11 @@ Los parametros de configuración son:
 - `privateKey`: Clave privada de tu cuenta de Wompi (sandbox o producción).
 
 ```JS
-const wompiClient = createClient('https://sandbox.wompi.co/v1', 'PRIVATE_KEY')
+// Instancia para sandbox
+const wompiClientSandbox = createClient('https://sandbox.wompi.co/v1', 'PRIVATE_KEY')
+
+// Instancia para producción
+const wompiClient = createClient('https://prod.wompi.co/v1', 'PRIVATE_KEY')
 
 // Consultar transacción por ID
 const transaction = await checkTransactionStatusById(wompiClient, 'txn_abc123')
@@ -174,7 +178,6 @@ Todos los parámetros y funciones exportadas tienen tipado explícito:
 - `createClient()`
 - `validateChecksum()`
 - `checkTransactionStatusById()`
-- `checkTransactionStatusByReference()`
 
 ## Contribuciones
 ¿Quieres mejorar esta librería o agregar nuevas funciones? ¡Bienvenido!
