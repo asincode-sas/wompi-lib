@@ -184,7 +184,7 @@ Todos los parámetros y funciones exportadas tienen tipado explícito:
 
 ```BASH
 # Clona el repo
-git clone https://github.com/tu-user/wompi-client
+git clone https://github.com/tu-user/wompi-lib
 
 # Instala dependencias
 npm install
