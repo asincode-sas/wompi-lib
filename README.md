@@ -71,7 +71,7 @@ export const webhookHandler = (req, res) => {
 
 ## `createClient`
 `createClient` es una función que retorna una instancia preconfigurada de Axios lista para interactuar con la 
-API de Wompi. Esta instancia incluye la autenticación necesaria mediante el uso de una llave privada (PRIVATE_KEY), 
+API de Wompi. Esta instancia incluye la autenticación necesaria mediante el uso de una llave pública (PUBLIC_KEY), 
 lo que te permite realizar peticiones de forma segura a cualquier endpoint del backend de Wompi (como consultar el 
 estado de una transacción, crear pagos o validar eventos).
 
@@ -85,10 +85,10 @@ Los parametros de configuración son:
 
 ```JS
 // Instancia para sandbox
-const wompiClientSandbox = createClient('https://sandbox.wompi.co/v1', 'PRIVATE_KEY')
+const wompiClientSandbox = createClient('https://sandbox.wompi.co/v1', 'PUBLIC_KEY')
 
 // Instancia para producción
-const wompiClient = createClient('https://prod.wompi.co/v1', 'PRIVATE_KEY')
+const wompiClient = createClient('https://prod.wompi.co/v1', 'PUBLIC_KEY')
 
 // Consultar transacción por ID
 const transaction = await checkTransactionStatusById(wompiClient, 'txn_abc123')
@@ -160,7 +160,7 @@ Consulta el estado de una transacción a partir del ID único de la misma. Requi
 creada con `createClient`.
 
 ```JS
-const wompiClient = createClient('https://sandbox.wompi.co/v1', 'PRIVATE_KEY')
+const wompiClient = createClient('https://sandbox.wompi.co/v1', 'PUBLIC_KEY')
 const transaction = await checkTransactionStatusById(wompiClient, 'xn_abc123')
 
 console.log(transaction.status) // Ej: 'APPROVED'
