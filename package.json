@@ -37,8 +37,7 @@
     "eslint-config-lintastic": "github:asincode-sas/eslint-config-lintastic",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.1",
-    "nock": "^14.0.4",
-    "typescript": "^5.8.3"
+    "nock": "^14.0.4"
   },
   "dependencies": {
     "axios": "^1.9.0",
