@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --build",
     "test": "node --test",
     "test:coverage": "npx c8 --reporter=lcov npm test",
     "lint": "eslint .",
