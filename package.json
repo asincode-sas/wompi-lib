@@ -1,7 +1,7 @@
 {
   "name": "@asincode/wompi-lib",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "node --test",
     "test:coverage": "npx c8 --reporter=lcov npm test",
