@@ -1,13 +1,13 @@
 import {
   buildWompiUrl,
   checkTransactionStatusById,
-  createClient,
   validateChecksum
 } from '#wompiClient.js'
 import { describe, test } from 'node:test'
 import { event, invalidEvent } from './mocks/wompiResponses.js'
 import { AxiosError } from 'axios'
 import assert from 'node:assert/strict'
+import { createClient } from '#axios.js'
 import nock from 'nock'
 
 describe('buildWompiUrl', () => {
@@ -71,7 +71,7 @@ describe('createClient', () => {
       privateKey: 'myPublicKey'
     }
 
-    const client = createClient(initConfig.baseURL, initConfig.privateKey)
+    const client = createClient({ baseURL: initConfig.baseURL, publicKey: initConfig.privateKey })
     assert.strictEqual(typeof client, 'function')
   })
 })
@@ -79,7 +79,7 @@ describe('createClient', () => {
 describe('checkTransactionStatusById', () => {
   test('mockea un parecido a una respuesta 200 de wompi', async () => {
     const mockUrl = 'https://api.example.com'
-    const wompiClient = createClient(mockUrl, 'myPublicKey')
+    const wompiClient = createClient({ baseURL: mockUrl, publicKey: 'myPublicKey' })
     const transactionId = 'transactionId123'
     const expectedResponse = {
       data: {
@@ -100,7 +100,7 @@ describe('checkTransactionStatusById', () => {
 describe('Errores de peticion', () => {
   test('mockea un parecido a una respuesta de error de wompi', async () => {
     const mockUrl = 'https://api.example.com'
-    const wompiClient = createClient(mockUrl, 'myPublicKey')
+    const wompiClient = createClient({ baseURL: mockUrl, publicKey: 'myPublicKey' })
     const transactionReference = 'transactionReference123'
     const expectedResponse = {
       response: {
@@ -125,7 +125,7 @@ describe('Errores de peticion', () => {
 
   test('retorna un error.message si la consulta falla', async () => {
     const mockUrl = 'https://api.example.com'
-    const wompiClient = createClient(mockUrl, 'myPublicKey')
+    const wompiClient = createClient({ baseURL: mockUrl, publicKey: 'myPublicKey' })
     const transactionReference = 'transactionReference123'
     const expectedErrorMessage = 'Network Error'
 
@@ -144,7 +144,7 @@ describe('Errores de peticion', () => {
 
   test('retorna un error.request si la consulta falla', async () => {
     const mockUrl = 'https://api.example.com'
-    const wompiClient = createClient(mockUrl, 'myPublicKey')
+    const wompiClient = createClient({ baseURL: mockUrl, publicKey: 'myPublicKey' })
     const transactionReference = 'transactionReference123'
     const expectedErrorMessage = 'Network Error'
 
@@ -162,7 +162,7 @@ describe('Errores de peticion', () => {
   })
 
   test('retorna un error por defecto si la consulta falla', async () => {
-    const wompiClient = createClient('', 'myPublicKey')
+    const wompiClient = createClient({ baseURL: '', publicKey: 'myPublicKey' })
     const transactionReference = 'transactionReference123'
     const expectedError = { error: 'Ocurrió un error al conectarse con Wompi. Revisa que la instancia axios esté correctamente configurada o inténtalo de nuevo más tarde' }
 
